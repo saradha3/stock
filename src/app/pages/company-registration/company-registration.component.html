@@ -1,0 +1,60 @@
+<div class="card mt-2 col-md-8 offset-md-2 text-center">
+    <div class="card-body p-md-5 text-black">
+      
+        <form #formRef="ngForm" (ngSubmit)="onSubmit()" ngNativeValidate>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Company Code</mat-label>
+                        <input matInput name="companycode" [(ngModel)]="company.companycode" required>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Company Name</mat-label>
+                        <input matInput name="companyname" [(ngModel)]="company.companyname" required>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Company CEO</mat-label>
+                        <input matInput name="companyceo" [(ngModel)]="company.companyceo" required>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Company TurnOver</mat-label>
+                        <input matInput name="companyturnover" [(ngModel)]="company.companyturnover" required>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Company Website</mat-label>
+                        <input matInput name="companywebsite" [(ngModel)]="company.companywebsite" required>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Stock Exchange</mat-label>
+                        <mat-select [(ngModel)]="company.stockexchange">
+                          <mat-option value="bse">BSE</mat-option>
+                          <mat-option value="nse">NSE</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center pt-3">
+                <button type="reset" class="btn btn-light btn-lg">Reset all</button>
+                <button type="submit" [disabled] = "!formRef.valid" class="btn btn-warning btn-lg ms-2">Register</button>
+              </div>
+
+        </form>
+    </div>
+  </div>
